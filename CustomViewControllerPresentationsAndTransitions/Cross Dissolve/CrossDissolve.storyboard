@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="74q-A2-bER">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="PcE-rc-F9S">
+            <objects>
+                <navigationController id="74q-A2-bER" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xP0-y1-5Nx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="r9G-y3-7LL" kind="relationship" relationship="rootViewController" id="EcV-TJ-J85"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFW-Kq-izR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-482" y="106"/>
+        </scene>
+        <!--Cross Dissolve-->
+        <scene sceneID="nig-1U-OQ6">
+            <objects>
+                <viewController id="r9G-y3-7LL" customClass="CrossDissolveFirstViewController" customModule="CustomViewControllerPresentationsAndTransitions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vt6-Ij-HM1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-of-cCQ">
+                                <rect key="frame" x="79" y="597" width="217" height="30"/>
+                                <state key="normal" title="Present With Custom Transition"/>
+                                <connections>
+                                    <action selector="presentWithCustomTransitionAction:" destination="r9G-y3-7LL" eventType="touchUpInside" id="LcD-ws-6w8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1AP-of-cCQ" firstAttribute="centerX" secondItem="vt6-Ij-HM1" secondAttribute="centerX" id="mZf-76-yRm"/>
+                            <constraint firstItem="dnN-k4-308" firstAttribute="bottom" secondItem="1AP-of-cCQ" secondAttribute="bottom" constant="40" id="qNN-Ae-RHV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dnN-k4-308"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cross Dissolve" id="pFt-AI-ihZ">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="8Ma-ud-nDi">
+                            <connections>
+                                <segue destination="LlK-ZT-uMJ" kind="unwind" unwindAction="unwindToMenuViewController:" id="18V-VB-qQB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIQ-Xk-goj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LlK-ZT-uMJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="102"/>
+        </scene>
+        <!--Cross Dissolve Second View Controller-->
+        <scene sceneID="n3d-5j-pze">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="JKJ-v7-kWd" customClass="CrossDissolveSecondViewController" customModule="CustomViewControllerPresentationsAndTransitions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="543-hR-3Jt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypi-ND-U4d">
+                                <rect key="frame" x="160" y="597" width="54" height="30"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="dismissAction:" destination="JKJ-v7-kWd" eventType="touchUpInside" id="im1-7V-kPR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ypi-ND-U4d" firstAttribute="centerX" secondItem="543-hR-3Jt" secondAttribute="centerX" id="I7A-5G-EHZ"/>
+                            <constraint firstItem="5BN-VG-cTp" firstAttribute="bottom" secondItem="ypi-ND-U4d" secondAttribute="bottom" constant="40" id="V0O-kg-mrk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5BN-VG-cTp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fac-jt-fbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="101"/>
+        </scene>
+    </scenes>
+</document>

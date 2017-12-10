@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iRS-aI-ngB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qmR-Tu-xrc">
+            <objects>
+                <navigationController id="iRS-aI-ngB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pct-3h-RaC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jaq-Fr-AgG" kind="relationship" relationship="rootViewController" id="OaT-Xa-RM4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zaU-Y2-sgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Custom Presentation-->
+        <scene sceneID="hxm-Om-QYo">
+            <objects>
+                <viewController id="jaq-Fr-AgG" customClass="CustomPresentationFirstViewController" customModule="CustomViewControllerPresentationsAndTransitions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9b1-NO-bT1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDV-jb-5cf">
+                                <rect key="frame" x="72" y="597" width="231" height="30"/>
+                                <state key="normal" title="Present With Custom Presentaion"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="jaq-Fr-AgG" eventType="touchUpInside" id="QSo-iG-X3h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hyi-N6-J9a" firstAttribute="bottom" secondItem="iDV-jb-5cf" secondAttribute="bottom" constant="40" id="QU1-cF-Ke1"/>
+                            <constraint firstItem="iDV-jb-5cf" firstAttribute="centerX" secondItem="9b1-NO-bT1" secondAttribute="centerX" id="ht4-7q-cnv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hyi-N6-J9a"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Custom Presentation" id="vtS-4b-mwX">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Lnc-Mt-2He"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpD-zy-ASr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="492"/>
+        </scene>
+        <!--Custom Presentation Second View Controller-->
+        <scene sceneID="NVo-7Z-0Fy">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="Gpg-Pe-JGM" customClass="CustomPresentationSecondViewController" customModule="CustomViewControllerPresentationsAndTransitions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TYC-zY-PBd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8dV-92-Lac">
+                                <rect key="frame" x="18" y="145" width="339" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChange:" destination="Gpg-Pe-JGM" eventType="valueChanged" id="aPJ-AR-2cu"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9V-Dv-2jR">
+                                <rect key="frame" x="67" y="190" width="240" height="30"/>
+                                <state key="normal" title="Present With Standard Presentaion"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fes-RU-1Qj" firstAttribute="bottom" secondItem="f9V-Dv-2jR" secondAttribute="bottom" constant="40" id="2jL-hE-Oyi"/>
+                            <constraint firstItem="8dV-92-Lac" firstAttribute="leading" secondItem="Fes-RU-1Qj" secondAttribute="leading" constant="20" id="Aw9-3W-thl"/>
+                            <constraint firstItem="f9V-Dv-2jR" firstAttribute="top" secondItem="8dV-92-Lac" secondAttribute="bottom" constant="15" id="FhQ-v7-D7s"/>
+                            <constraint firstItem="Fes-RU-1Qj" firstAttribute="trailing" secondItem="8dV-92-Lac" secondAttribute="trailing" constant="20" id="WzA-J4-ubQ"/>
+                            <constraint firstItem="f9V-Dv-2jR" firstAttribute="centerX" secondItem="TYC-zY-PBd" secondAttribute="centerX" id="cZz-lD-prb"/>
+                            <constraint firstItem="8dV-92-Lac" firstAttribute="centerX" secondItem="TYC-zY-PBd" secondAttribute="centerX" id="zxo-FK-7Nc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fes-RU-1Qj"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="260"/>
+                    <connections>
+                        <outlet property="slider" destination="8dV-92-Lac" id="Tfm-Lk-6lD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Glt-p7-78M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1521" y="486"/>
+        </scene>
+    </scenes>
+</document>
